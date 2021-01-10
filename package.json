@@ -2,8 +2,10 @@
   "name": "great-novels-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "dev": "./node_modules/.bin/concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "./node_modules/.bin/webpack --progress --config webpack.dev.js",
     "dev:server": "./node_modules/.bin/env-cmd ./node_modules/.bin/nodemon index.js",
     "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./configs/sequelize.js",
     "lint": "./node_modules/.bin/eslint --format codeframe .",
