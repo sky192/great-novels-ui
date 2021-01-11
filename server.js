@@ -1,10 +1,12 @@
-const express = require('express')
-const path = require('path')
-const { getAllAuthors, getAuthorByIdOrName } = require('./controllers/authors')
-const { getAllGenres, getGenreById } = require('./controllers/genres')
-const { getAllNovels, getNovelByIdOrTitle } = require('./controllers/novels')
+import express from 'express'
+import path from 'path'
+import { getAllAuthors, getAuthorByIdOrName } from './controllers/authors'
+import { getAllGenres, getGenreById } from './controllers/genres'
+import { getAllNovels, getNovelByIdOrTitle } from './controllers/novels'
 
 const app = express()
+
+app.use(express.static('public'))
 
 app.get('/api/authors', getAllAuthors)
 app.get('/api/authors/:identifier', getAuthorByIdOrName)
