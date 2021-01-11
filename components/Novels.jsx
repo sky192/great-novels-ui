@@ -1,27 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import Search from './Search'
-import Novel from './Novel'
+import React, { useEffect, useState } from 'react'
 import { filterNovels, retrieveNovels } from '../utils/novels'
 
+import Novel from './Novel'
+import Search from './Search'
+
 export default () => {
-  const [filteredNovelList, setFilteredNovelList] = useState([])
   const [novelList, setNovelList] = useState([])
+  const [filteredNovelList, setFilteredNovelList] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
-    async function pullData() {
-      const novels = await retrieveNovels()
-
-      setNovelList(novels)
-      setFilteredNovelList(novels)
-    }
-    pullData()
+    retrieveNovels(setNovelList, setFilteredNovelList)
   }, [])
 
   useEffect(() => {
-    const filtered = filterNovels(novelList, searchTerm)
-
-    setFilteredNovelList(filtered)
+    filterNovels(novelList, searchTerm, setFilteredNovelList)
   }, [searchTerm])
 
   return (
@@ -32,7 +25,6 @@ export default () => {
         filteredNovelList.map(novel => (
           <Novel
             key={novel.id}
-            id={novel.id}
             title={novel.title}
             author={`${novel.author.nameFirst} ${novel.author.nameLast}`}
           />
