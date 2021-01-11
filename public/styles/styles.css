@@ -1,0 +1,39 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 60px auto 0;
+    width: 60%;
+  }
+  
+  .title {
+    font-size: 50px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  input {
+    background-color: #edeef1;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 30px auto;
+    outline: thin black;
+    padding: 5px 10px;
+    width: 250px;
+  }
+  
+  .novel {
+      border: 1px solid black;
+      border-radius: 1px;
+      background-color: #edeef1;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+      font-size: 20px;
+      font-weight: 600;
+      margin: auto;
+      margin-bottom: 9px;
+      outline: thin black;
+      padding: 5px;
+      text-align: center;
+      width: 600px;
+  }
