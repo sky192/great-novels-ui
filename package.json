@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/stackeducation/great-novels-api#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "babel": "^6.23.0",
     "babel-plugin-styled-components": "^1.12.0",
     "components": "^0.1.0",
